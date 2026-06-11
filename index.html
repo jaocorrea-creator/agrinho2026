@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte Brasil - GitHub Page</title>
+    <style>
+        /* Estilos Globais */
+        :root {
+            --verde-agro: #1b4d3e;
+            --verde-folha: #2c6e49;
+            --ouro-safra: #d4a373;
+            --terra: #4a3728;
+            --claro: #fefae0;
+            --branco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--claro);
+            color: var(--terra);
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--verde-agro);
+            color: var(--branco);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            color: var(--ouro-safra);
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--ouro-safra);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(27, 77, 62, 0.7), rgba(74, 55, 40, 0.8)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: var(--branco);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            background-color: var(--ouro-safra);
+            color: var(--terra);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--branco);
+            color: var(--verde-agro);
+        }
+
+        /* Seção de Repositórios / Projetos */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--verde-agro);
+            margin-bottom: 40px;
+        }
+
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--branco);
+            border-left: 5px solid var(--verde-folha);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--verde-agro);
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .tag {
+            background-color: #e9edc9;
+            color: var(--verde-folha);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--terra);
+            color: var(--claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Agro<span>Forte</span>.dev</h1>
+        <nav>
+            <a href="#projetos">Projetos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="https://github.com" target="_blank">Meu GitHub</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>O Futuro do Agro é Tech</h2>
+        <p>Desenvolvendo soluções em código para impulsionar a produtividade, sustentabilidade e a força do campo brasileiro.</p>
+        <a href="#projetos" class="btn">Ver Repositórios</a>
+    </section>
+
+    <main class="container" id="projetos">
+        <h2 class="section-title">Nossos Repositórios AgroTech</h2>
+        
+        <div class="grid-projetos">
+            <div class="card">
+                <h3>🌱 monitoramento-safra-ia</h3>
+                <p>Algoritmos de Inteligência Artificial para previsão de quebra de safra com base em dados climáticos regionais do Brasil.</p>
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+            </div>
+
+            <div class="card">
+                <h3>🚜 telemetria-maquinas</h3>
+                <p>API em tempo real para conectar sensores de tratores e colheitadeiras, otimizando o gasto de combustível no plantio.</p>
+                <span class="tag">Node.js</span>
+                <span class="tag">IoT</span>
+            </div>
+
+            <div class="card">
+                <h3>📊 dashboard-precificacao</h3>
+                <p>Painel interativo que cruza dados da Bolsa de Valores com o preço das principais commodities (soja, milho e café).</p>
+                <span class="tag">React</span>
+                <span class="tag">Data Viz</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroForte.dev - Alimentando o mundo através da tecnologia.</p>
+    </footer>
+
+</body>
+</html>
