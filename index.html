@@ -13,6 +13,7 @@
             --terra: #4a3728;
             --claro: #fefae0;
             --branco: #ffffff;
+            --alerta: #bc4749;
         }
 
         body {
@@ -90,7 +91,7 @@
             color: var(--verde-agro);
         }
 
-        /* Seção de Repositórios / Projetos */
+        /* Estrutura de Containers */
         .container {
             max-width: 1200px;
             margin: 50px auto;
@@ -104,6 +105,7 @@
             margin-bottom: 40px;
         }
 
+        /* Seção de Repositórios / Projetos */
         .grid-projetos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -144,13 +146,119 @@
             margin-top: 10px;
         }
 
+        /* Nova Seção: Prós e Contras */
+        .grid-analise {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .coluna-analise {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .coluna-analise.positiva {
+            border-top: 6px solid var(--verde-folha);
+        }
+
+        .coluna-analise.negativa {
+            border-top: 6px solid var(--alerta);
+        }
+
+        .coluna-analise h3 {
+            font-size: 24px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .positiva h3 { color: var(--verde-folha); }
+        .negativa h3 { color: var(--alerta); }
+
+        .lista-pontos {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lista-pontos li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .positiva .lista-pontos li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--verde-folha);
+            font-weight: bold;
+        }
+
+        .negativa .lista-pontos li::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: var(--alerta);
+            font-weight: bold;
+        }
+
+        /* Nova Seção: Dados de Fontes Reais */
+        .secao-dados {
+            background-color: var(--verde-agro);
+            color: var(--branco);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .secao-dados h2 {
+            color: var(--ouro-safra);
+            margin-bottom: 20px;
+        }
+
+        .secao-dados p {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .grid-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-dado {
+            background-color: var(--branco);
+            color: var(--verde-agro);
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .btn-dado:hover {
+            background-color: var(--ouro-safra);
+            color: var(--terra);
+            transform: translateY(-3px);
+        }
+
         /* Rodapé */
         footer {
             background-color: var(--terra);
             color: var(--claro);
             text-align: center;
             padding: 20px;
-            margin-top: 50px;
             font-size: 14px;
         }
     </style>
@@ -161,14 +269,15 @@
         <h1>Agro<span>Forte</span>.dev</h1>
         <nav>
             <a href="#projetos">Projetos</a>
-            <a href="#sobre">Sobre</a>
-            <a href="https://github.com" target="_blank">Meu GitHub</a>
+            <a href="#analise">Impactos do Agro</a>
+            <a href="#dados">Dados Reais</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
         </nav>
     </header>
 
     <section class="hero">
         <h2>O Futuro do Agro é Tech</h2>
-        <p>Desenvolvendo soluções em código para impulsionar a produtividade, sustentabilidade e a força do campo brasileiro.</p>
+        <p>Desenvolvendo soluções em código para impulsionar a produtividade, equilibrar a sustentabilidade e entender a força do campo brasileiro.</p>
         <a href="#projetos" class="btn">Ver Repositórios</a>
     </section>
 
@@ -190,7 +299,7 @@
                 <span class="tag">IoT</span>
             </div>
 
-            <div class="card">
+            <div class="card font-code">
                 <h3>📊 dashboard-precificacao</h3>
                 <p>Painel interativo que cruza dados da Bolsa de Valores com o preço das principais commodities (soja, milho e café).</p>
                 <span class="tag">React</span>
@@ -199,8 +308,60 @@
         </div>
     </main>
 
+    <section class="container" id="analise">
+        <h2 class="section-title">Análise de Impacto: O Panorama do Agro no Brasil</h2>
+        <p style="text-align: center; max-width: 800px; margin: -20px auto 40px auto; line-height: 1.6; color: #666;">
+            A tecnologia no campo serve justamente para potencializar os retornos benéficos do setor e atuar ativamente na mitigação e resolução dos problemas socioambientais existentes.
+        </p>
+
+        <div class="grid-analise">
+            <div class="coluna-analise positiva">
+                <h3>Pontos Positivos (O Motor Econômico)</h3>
+                <ul class="lista-pontos">
+                    <li><strong>Segurança Alimentar Global:</strong> O Brasil é um dos maiores exportadores de grãos e carne do mundo, alimentando mais de 1 bilhão de pessoas mundialmente.</li>
+                    <li><strong>Geração de Empregos e Renda:</strong> O setor emprega direta e indiretamente milhões de brasileiros, sustentando economias de centenas de municípios no interior do país.</li>
+                    <li><strong>Pilares do PIB Nacional:</strong> O agronegócio representa historicamente cerca de 1/4 (25%) de toda a riqueza gerada pelo Produto Interno Bruto brasileiro.</li>
+                    <li><strong>Inovação Tecnológica (Agtechs):</strong> O uso de drones, sensores IoT, satélites e IA reduz o desperdício e aumenta a produtividade sem a necessidade de expansão proporcional de terra.</li>
+                </ul>
+            </div>
+
+            <div class="coluna-analise negativa">
+                <h3>Desafios e Pontos Negativos (A Trilha Socioambiental)</h3>
+                <ul class="lista-pontos">
+                    <li><strong>Pressão sobre Biomas:</strong> A expansão descuidada da fronteira agrícola gera riscos severos de desmatamento ilegal no Cerrado e na Amazônia, afetando a biodiversidade.</li>
+                    <li><strong>Uso Intensivo de Agroquímicos:</strong> O Brasil figura entre os maiores consumidores de defensivos agrícolas do mundo, gerando discussões sobre contaminação do solo e da água.</li>
+                    <li><strong>Pegada de Carbono e Recursos Hídricos:</strong> A pecuária extensiva contribui fortemente para as emissões de gases estufa (metano), e a agricultura consome grandes volumes de água potável em sistemas de irrigação ineficientes.</li>
+                    <li><strong>Concentração de Terras:</strong> O modelo de latifúndios voltado à exportação às vezes acentua desigualdades fundiárias históricas no campo em detrimento da agricultura familiar tradicional.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao-dados" id="dados">
+        <div class="container" style="margin: 0 auto;">
+            <h2>Consulte Dados Reais e Oficiais</h2>
+            <p>
+                A tomada de decisões em tecnologia aplicada ao campo deve ser guiada por fatos. Acesse as plataformas e pesquisas dos principais órgãos de estatística, inteligência e pesquisa do Brasil para analisar os dados em tempo real:
+            </p>
+            <div class="grid-links">
+                <a href="https://www.embrapa.br/agropensa/agro-em-dados" target="_blank" class="btn-dado">
+                    📈 Agro em Dados (Embrapa)
+                </a>
+                <a href="https://www.ibge.gov.br/estatisticas/economicas/agricultura-e-pecuaria/9201-levantamento-sistematico-da-producao-agricola.html" target="_blank" class="btn-dado">
+                    🌾 Levantamento de Safras (IBGE)
+                </a>
+                <a href="https://www.ibge.gov.br/explica/producao-agropecuaria/" target="_blank" class="btn-dado">
+                    📊 Produção por Município (IBGE)
+                </a>
+                <a href="https://www.embrapa.br/" target="_blank" class="btn-dado">
+                    🔬 Pesquisa e Bioinsumos (Embrapa)
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 AgroForte.dev - Alimentando o mundo através da tecnologia.</p>
+        <p>&copy; 2026 AgroForte.dev - Construindo um ecossistema transparente através da tecnologia e dados reais.</p>
     </footer>
 
 </body>
